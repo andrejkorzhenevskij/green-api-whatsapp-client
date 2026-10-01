@@ -17,7 +17,7 @@ body {
 
 .app {
   max-width: 720px;
-  margin: 10vh auto;
+  margin: 4vh auto;
   padding: 32px 24px;
 }
 
@@ -30,4 +30,102 @@ body {
 h1 {
   font-size: clamp(2rem, 6vw, 3rem);
   line-height: 1.2;
+}
+
+h2 {
+  margin: 0;
+  overflow-wrap: anywhere;
+}
+
+.panel {
+  padding: 24px;
+  background: #fff;
+  border: 1px solid #cbdcd1;
+  border-radius: 12px;
+}
+
+.hint {
+  color: #506358;
+}
+
+.form {
+  display: grid;
+  gap: 12px;
+}
+
+input,
+textarea,
+button {
+  font: inherit;
+  border-radius: 6px;
+}
+
+input,
+textarea {
+  width: 100%;
+  min-width: 0;
+  padding: 10px 12px;
+  border: 1px solid #829b8b;
+  color: inherit;
+  background: #fff;
+}
+
+textarea {
+  resize: vertical;
+}
+
+button {
+  padding: 10px 16px;
+  border: 1px solid #217548;
+  color: #fff;
+  background: #217548;
+  cursor: pointer;
+}
+
+button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+button.secondary {
+  color: #217548;
+  background: #fff;
+}
+
+:focus-visible {
+  outline: 3px solid #217548;
+  outline-offset: 3px;
+}
+
+.chat-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.messages {
+  min-height: 180px;
+  max-height: 40vh;
+  overflow-y: auto;
+  margin: 20px 0;
+}
+
+.message-list {
+  display: grid;
+  gap: 10px;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+.message {
+  justify-self: end;
+  max-width: 90%;
+  padding: 10px 14px;
+  border-radius: 10px;
+  background: #e2f3e9;
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
 }

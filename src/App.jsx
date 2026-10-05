@@ -6,12 +6,11 @@ export default function App() {
   const [connection, setConnection] = useState(null)
 
   return (
-    <main className="app">
-      <p className="brand">GREEN-API</p>
-      <h1>Чат-клиент</h1>
+    <main className={`app ${connection ? 'app-connected' : 'app-auth'}`}>
       {connection ? (
         <ChatWindow
           idInstance={connection.idInstance}
+          apiTokenInstance={connection.apiTokenInstance}
           onDisconnect={() => setConnection(null)}
         />
       ) : (

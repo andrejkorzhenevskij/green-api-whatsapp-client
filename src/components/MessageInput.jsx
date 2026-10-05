@@ -1,28 +1,31 @@
 import { useState } from 'react'
 
-export default function MessageInput({ onSend }) {
+export default function MessageInput({ onSend, sending = false }) {
   const [text, setText] = useState('')
 
-  function handleSubmit(event) {
+  async function handleSubmit(event) {
     event.preventDefault()
-    const message = text.trim()
-    if (!message) return
-    onSend(message)
-    setText('')
+    if (sending || !text.trim()) return
+    if (await onSend(text)) setText('')
   }
 
   return (
-    <form className="form" onSubmit={handleSubmit}>
-      <label htmlFor="message">Сообщение</label>
+    <form className="composer" onSubmit={handleSubmit} aria-busy={sending}>
+      <label className="sr-only" htmlFor="message">Сообщение</label>
       <textarea
         id="message"
         name="message"
-        rows={3}
+        rows={2}
+        placeholder="Написать сообщение…"
         value={text}
         onChange={(event) => setText(event.target.value)}
+        maxLength={20000}
+        disabled={sending}
         required
       />
-      <button type="submit" disabled={!text.trim()}>Добавить сообщение</button>
+      <button type="submit" disabled={sending || !text.trim()}>
+        {sending ? 'Отправляем…' : 'Отправить'}
+      </button>
     </form>
   )
 }

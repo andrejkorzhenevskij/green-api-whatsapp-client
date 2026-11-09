@@ -29,8 +29,8 @@ React-клиент мессенджера для WhatsApp на GREEN-API. Про
 Клонируйте репозиторий и установите зависимости:
 
 ```bash
-git clone https://github.com/andrejkorzhenevskij/react.git
-cd react
+git clone https://github.com/andrejkorzhenevskij/green-api-whatsapp-client.git
+cd green-api-whatsapp-client
 npm install
 npm run dev
 ```
@@ -155,3 +155,10 @@ package-lock.json        # Зафиксированные версии зави�
 [GREEN-API для WhatsApp](https://green-api.com/docs/),
 [ReceiveNotification](https://green-api.com/docs/api/receiving/technology-http-api/ReceiveNotification/),
 [DeleteNotification](https://green-api.com/docs/api/receiving/technology-http-api/DeleteNotification/).
+
+## GREEN-API Developer Certificate
+
+The repository owner holds a GREEN-API Developer Qualification
+Certificate, issued on October 28, 2026.
+
+[View certificate (PDF)](docs/green-api-developer-certificate.pdf)
